@@ -6,5 +6,5 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" alt="Unity Logo" width="100"/>
 </p>
 
-<p align="center"> para a matériade criação de jogos 1</p>
+<p align="center"> para a matéria de criação de jogos 1</p>
 
