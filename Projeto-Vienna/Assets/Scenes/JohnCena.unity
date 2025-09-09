@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 177912957}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: tagGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1820,7 +1820,6 @@ GameObject:
   - component: {fileID: 2119533376}
   - component: {fileID: 2119533375}
   - component: {fileID: 2119533374}
-  - component: {fileID: 2119533379}
   - component: {fileID: 2119533378}
   - component: {fileID: 2119533377}
   - component: {fileID: 2119533380}
@@ -1962,18 +1961,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb9bc83323fe446428b04789649ec837, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2119533379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2119533373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb9bc83323fe446428b04789649ec837, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  anim: {fileID: 2119533374}
+  speed: 7
+  jumpForce: 5
+  isGround: 0
 --- !u!61 &2119533380
 BoxCollider2D:
   m_ObjectHideFlags: 0
