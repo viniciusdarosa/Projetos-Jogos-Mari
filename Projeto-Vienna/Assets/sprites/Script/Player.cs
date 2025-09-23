@@ -36,16 +36,16 @@ public class Player : MonoBehaviour
             transform.eulerAngles = new Vector2(0, 180);
             anim.SetInteger("transition", 1);
         }
-        if ((teclas == 0) && (isGround = true)) {
+        if (teclas == 0) {
             anim.SetInteger("transition", 0);
         }
     }
     void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && (isGround = true)) {
-            rigd.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            anim.SetInteger("transition", 2);
+        if (Input.GetKeyDown(KeyCode.Space) && isGround) {
+            rigd.AddForce(Vector2.up * jumpForce); //, ForceMode2D.Impulse);
             isGround = false;
+            anim.SetInteger("transition", 2);            
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
