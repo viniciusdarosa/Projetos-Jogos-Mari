@@ -4,10 +4,13 @@ using static UnityEngine.UI.Selectable;
 
 public class Player : MonoBehaviour
 {
+    public Vector2 posicaoInicial;
+    public GameManager GameManager;
+
     public Animator anim;
     private Rigidbody2D rigd;
     public float speed;
-
+    //pulo
     public float jumpForce = 10f;
     public bool isGround;
 
@@ -15,13 +18,17 @@ public class Player : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rigd = GetComponent<Rigidbody2D>();
-      
+        posicaoInicial = transform.position; //pega posição inicial
     }
 
     void Update()
     {
         Move();
         Jump();
+    }
+    public void ReiniciarPosição() 
+    {
+        transform.position = posicaoInicial;    
     }
 
     void Move()
@@ -55,5 +62,12 @@ public class Player : MonoBehaviour
             isGround = true;
             Debug.Log("está no chão");
         }
+
+        if (collision.gameObject.tag == "fora")
+        {
+            GameManager.alteravida(1);
+            Debug.Log("Caiu");
+        }
     }
+
 }

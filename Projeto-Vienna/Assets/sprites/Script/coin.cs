@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class coin : MonoBehaviour
 {
-    private float pontos;
+    public GameManager GameManager;
     void Start()
     {
         
@@ -16,9 +16,9 @@ public class coin : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player")) {
-            Debug.Log("colideo");
-            pontos += 10;
-}
+            GameManager.addpontos(10);
+            Destroy(gameObject);
+        }           
     }
 
 }
