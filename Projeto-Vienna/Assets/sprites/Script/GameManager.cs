@@ -7,12 +7,17 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI textPontos;
     public TextMeshProUGUI textVida;
 
-    public void addpontos(int qtd/*quantidade*/) 
+    public void addpontos(int qtd)
     {
         pontos += qtd;
-        if (pontos < 0) { pontos = 0; }
-        textPontos.text = "Pontos: " + pontos;
+
         Debug.Log("pontos: " + pontos);
+        if (pontos < 0)
+        {
+
+            pontos = 0;
+
+        }
     }
     public void alteravida(int vida) 
     { 
@@ -20,7 +25,7 @@ public class GameManager : MonoBehaviour
         textVida.text = "Vidas: " + vidas;
         Debug.Log("Vidas: " + vidas);
         GameObject player = GameObject.FindWithTag ("Player" );
-        player.GetComponent<Player>().ReiniciarPosição();
+        player.GetComponent<Player>().ReiniciarPosicao();
         if (vidas <= 0)
         {
             Time.timeScale = 0;

@@ -13,12 +13,14 @@ public class Player : MonoBehaviour
     //pulo
     public float jumpForce = 10f;
     public bool isGround;
+    public playeraudio playerAudio;
 
     void Start()
     {
         anim = GetComponent<Animator>();
         rigd = GetComponent<Rigidbody2D>();
         posicaoInicial = transform.position; //pega posição inicial
+        playerAudio = GetComponent<playeraudio>();
     }
 
     void Update()
@@ -26,7 +28,7 @@ public class Player : MonoBehaviour
         Move();
         Jump();
     }
-    public void ReiniciarPosição() 
+    public void ReiniciarPosicao() 
     {
         transform.position = posicaoInicial;    
     }
@@ -52,7 +54,9 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGround) {
             rigd.AddForce(Vector2.up * jumpForce); //, ForceMode2D.Impulse);
             isGround = false;
-            anim.SetInteger("transition", 2);            
+            anim.SetInteger("transition", 2);
+            playerAudio.PlaySFX(playerAudio.jumpsound);
+            
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
