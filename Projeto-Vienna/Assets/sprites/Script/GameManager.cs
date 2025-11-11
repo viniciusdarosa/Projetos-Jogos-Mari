@@ -10,19 +10,17 @@ public class GameManager : MonoBehaviour
     public void addpontos(int qtd)
     {
         pontos += qtd;
-
         Debug.Log("pontos: " + pontos);
         if (pontos < 0)
         {
-
             pontos = 0;
-
         }
+        //textPontos.text = "pontos: " + pontos;
     }
     public void alteravida(int vida) 
     { 
         vidas -= vida;
-        textVida.text = "Vidas: " + vidas;
+        //textVida.text = "Vidas: " + vidas;
         Debug.Log("Vidas: " + vidas);
         GameObject player = GameObject.FindWithTag ("Player" );
         player.GetComponent<Player>().ReiniciarPosicao();

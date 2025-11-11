@@ -5,7 +5,7 @@ using static UnityEngine.UI.Selectable;
 public class Player : MonoBehaviour
 {
     public Vector2 posicaoInicial;
-    public GameManager GameManager;
+    public GameManager Gamemanager;
 
     public Animator anim;
     private Rigidbody2D rigd;
@@ -69,7 +69,7 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.tag == "fora")
         {
-            GameManager.alteravida(1);
+            Gamemanager.alteravida(1);
             Debug.Log("Caiu");
         }
     }
